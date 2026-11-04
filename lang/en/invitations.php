@@ -1,0 +1,26 @@
+<?php
+
+return [
+    'title' => 'Team invitation',
+    'heading' => 'Join the workspace',
+    'subheading' => 'Create your secure account for :company.',
+    'name' => 'Full name',
+    'password' => 'Password',
+    'password_confirmation' => 'Confirm password',
+    'language' => 'Interface language',
+    'accept' => 'Create account and join',
+    'accepted' => 'Your account is ready.',
+    'access_summary' => 'Role: :role · Access: :branch',
+    'invite_new' => 'Invite a new employee',
+    'create_link' => 'Create invitation link',
+    'created' => 'Invitation created. Copy the link now.',
+    'share_once' => 'One-time invitation link',
+    'share_help' => 'Send this link through a trusted channel. It is shown here only after creation.',
+    'copy' => 'Copy',
+    'expires_help' => 'Invitation links expire after 72 hours. Existing Hussons One users can be added with the form above.',
+    'pending' => 'Pending invitations',
+    'unavailable' => 'This invitation is expired or already used.',
+    'account_exists' => 'An account already exists for this email. Ask an administrator to add it directly.',
+    'use_existing' => 'This person already has an account. Use “Add an existing user”.',
+    'too_many' => 'Too many pending invitations. Wait for existing invitations to expire.',
+];

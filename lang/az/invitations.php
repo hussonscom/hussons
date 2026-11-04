@@ -1,0 +1,26 @@
+<?php
+
+return [
+    'title' => 'Komanda dəvəti',
+    'heading' => 'İş sahəsinə qoşulun',
+    'subheading' => ':company üçün təhlükəsiz hesabınızı yaradın.',
+    'name' => 'Ad və soyad',
+    'password' => 'Şifrə',
+    'password_confirmation' => 'Şifrəni təsdiqləyin',
+    'language' => 'İnterfeys dili',
+    'accept' => 'Hesab yarat və qoşul',
+    'accepted' => 'Hesabınız hazırdır.',
+    'access_summary' => 'Rol: :role · Giriş: :branch',
+    'invite_new' => 'Yeni əməkdaş dəvət et',
+    'create_link' => 'Dəvət linki yarat',
+    'created' => 'Dəvət yaradıldı. Linki indi kopyalayın.',
+    'share_once' => 'Birdəfəlik dəvət linki',
+    'share_help' => 'Linki etibarlı kanal ilə göndərin. O, yalnız yaradıldıqdan sonra burada göstərilir.',
+    'copy' => 'Kopyala',
+    'expires_help' => 'Dəvət linki 72 saat qüvvədədir. Mövcud Hussons One istifadəçilərini yuxarıdakı forma ilə əlavə edin.',
+    'pending' => 'Gözləyən dəvətlər',
+    'unavailable' => 'Bu dəvətin vaxtı bitib və ya artıq istifadə olunub.',
+    'account_exists' => 'Bu e-poçtla hesab artıq mövcuddur. Administrator onu birbaşa əlavə etməlidir.',
+    'use_existing' => 'Bu şəxsin artıq hesabı var. Mövcud istifadəçi əlavə etmə formasından istifadə edin.',
+    'too_many' => 'Həddindən çox gözləyən dəvət var. Köhnə dəvətlərin bitməsini gözləyin.',
+];

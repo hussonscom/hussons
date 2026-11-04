@@ -1,0 +1,12 @@
+@extends('layouts.app')
+
+@section('title', __('operations.sales_title'))
+
+@section('content')
+<div class="page-head"><div><p class="text-slate-500">{{ __('operations.sales_subtitle') }}</p></div><a class="btn btn-primary" href="{{ route('sales.create') }}">+ {{ __('operations.new_sale') }}</a></div>
+<form class="panel mb-5 grid gap-3 p-4 md:grid-cols-[1fr_220px_auto]" method="GET"><label class="field"><span class="sr-only">{{ __('operations.search_receipt') }}</span><input type="search" name="q" value="{{ request('q') }}" placeholder="{{ __('operations.search_receipt') }}"></label><label class="field"><span class="sr-only">{{ __('operations.status') }}</span><select name="status"><option value="">{{ __('operations.all_statuses') }}</option>@foreach(['completed','refunded','voided','draft'] as $status)<option value="{{ $status }}" @selected(request('status') === $status)>{{ ucfirst($status) }}</option>@endforeach</select></label><button class="btn btn-dark" type="submit">{{ __('operations.filter') }}</button></form>
+<div class="panel overflow-hidden"><div class="overflow-x-auto"><table class="data-table min-w-[850px]"><thead><tr><th>{{ __('operations.number') }}</th><th>{{ __('operations.customer') }}</th><th>{{ __('operations.cashier') }}</th><th>{{ __('operations.payment') }}</th><th>{{ __('operations.status') }}</th><th>{{ __('operations.total') }}</th><th></th></tr></thead><tbody>
+@forelse($sales as $sale)<tr><td><a class="font-mono text-xs font-semibold text-blue-600" href="{{ route('sales.show', $sale) }}">{{ $sale->number }}</a><small class="block text-slate-400">{{ $sale->sold_at?->format('d.m.Y H:i') }}</small></td><td>{{ $sale->customer?->name ?? '—' }}</td><td>{{ $sale->user->name }}</td><td>{{ $sale->payments->pluck('method')->unique()->join(', ') }}</td><td><span @class(['badge','bg-emerald-100 text-emerald-800' => $sale->status === 'completed','bg-amber-100 text-amber-800' => $sale->status === 'draft','bg-rose-100 text-rose-700' => in_array($sale->status, ['refunded','voided'])])>{{ $sale->status }}</span></td><td class="font-semibold">{{ number_format((float)$sale->total, 2) }} ₼</td><td class="text-right"><a class="btn" href="{{ route('sales.show', $sale) }}">{{ __('operations.receipt') }}</a></td></tr>
+@empty<tr><td colspan="7" class="py-16 text-center text-slate-500">{{ __('operations.no_sales') }}</td></tr>@endforelse
+</tbody></table></div></div><div class="mt-5">{{ $sales->links() }}</div>
+@endsection
